@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>CRUD</h1>
+    <div class="container">
+        <a href="create.html">Create iitem</a>
+    </div>
+    <div class="item-container"></div>
+
+    <script>
+        const container = document.querySelector('.item-container');
+        const items = JSON.parse(localStorage.getItem('items')) || [];
+        items.forEach(item => {
+            const div = document.createElement('div');
+            div.textContent = item;
+            container.appendChild(div);
+        })
+    </script>
+</body>
+</html>
